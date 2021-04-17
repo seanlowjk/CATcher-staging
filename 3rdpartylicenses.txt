@@ -94,8 +94,6 @@ THE SOFTWARE.
 
 @angular/material/progress-spinner
 
-@angular/material/radio
-
 @angular/material/select
 
 @angular/material/slide-toggle
