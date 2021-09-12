@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy_web:
-    if: ${{ github.repository == 'CATcher-org/CATcher-staging' }} 
+    if: ${{ github.repository == 'seanlowjk/CATcher-staging' }} 
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Deploy on Staging Website
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install
-          npm run deploy:staging -- --repo=https://${{secrets.GH_TOKEN}}@github.com/CATcher-org/CATcher-staging.git
+          npm run deploy:staging -- --repo=https://${{secrets.GITHUB_TOKEN}}@github.com/seanlowjk/CATcher-staging.git
